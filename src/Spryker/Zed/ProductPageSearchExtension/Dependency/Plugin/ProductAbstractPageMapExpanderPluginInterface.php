@@ -1,8 +1,9 @@
 <?php
-
 /**
- * Copyright © 2016-present Spryker Systems GmbH. All rights reserved.
- * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
+ * Created by PhpStorm.
+ * User: asaulenko
+ * Date: 11/27/19
+ * Time: 12:02 AM
  */
 
 namespace Spryker\Zed\ProductPageSearchExtension\Dependency\Plugin;
@@ -11,11 +12,11 @@ use Generated\Shared\Transfer\LocaleTransfer;
 use Generated\Shared\Transfer\PageMapTransfer;
 use Spryker\Zed\ProductPageSearchExtension\Dependency\PageMapBuilderInterface;
 
-interface ProductConcretePageMapExpanderPluginInterface
+interface ProductAbstractPageMapExpanderPluginInterface
 {
     /**
      * Specification:
-     * - Expands the provided PageMap transfer object and returns the modified version.
+     * - Expands and returns the provided PageMapTransfer objects data.
      *
      * @api
      *
@@ -26,5 +27,5 @@ interface ProductConcretePageMapExpanderPluginInterface
      *
      * @return \Generated\Shared\Transfer\PageMapTransfer
      */
-    public function expand(PageMapTransfer $pageMapTransfer, PageMapBuilderInterface $pageMapBuilder, array $productData, LocaleTransfer $localeTransfer): PageMapTransfer;
+    public function expandProductPageMap(PageMapTransfer $pageMapTransfer, PageMapBuilderInterface $pageMapBuilder, array $productData, LocaleTransfer $localeTransfer);
 }
